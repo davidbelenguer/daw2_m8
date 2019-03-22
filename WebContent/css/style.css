@@ -1,0 +1,31 @@
+body{
+	text-align: center;
+    background-color: cyan
+}
+.nameForm{
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 400px;
+}
+.img{
+    
+    display: inline-block;
+    margin-left: 10px;
+}
+.img1{
+    margin-left: 30px;
+}
+
+#money{
+    text-align: center;
+    border: 1px solid black;
+    background-color: yellow;
+    margin: 0 auto;
+    width: 400px;
+}
+.txt{
+    background-color: yellow;
+    width: 80px;
+    border: 1px solid black;
+}
