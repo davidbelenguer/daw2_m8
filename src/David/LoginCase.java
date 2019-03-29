@@ -11,7 +11,7 @@ public class LoginCase {
 	public static boolean insertUser;
 
 	/* CREATE TABLE */
-	public static boolean insertUser(String uName, String uPass, String uEmail) {
+	public static boolean insertUser(String uName, String uPass, String uEmail) throws SQLException {
 		Connection con;
 		con = ConnectionDB.getConnection();
 		Connection conectionNick;
@@ -46,45 +46,24 @@ public class LoginCase {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			closeAll(nick, pss);
+			//closeAll(nick, pss);
+			nick.close();
+			pss.close();
 		}
 		return false;
 	}
 
-	private static void closeAll(PreparedStatement nick, PreparedStatement pss) {
-		if (nick != null) {
-			try {
-				nick.close();
-			} catch (Exception e) {
-			}
-		}
-		if (pss != null) {
-			try {
-				pss.close();
-			} catch (Exception e) {
-				
-			}
-		}
-
-	}
-
-//	private void closeAll(ResultSet rs, Statement st, Connection cnx) {
-//		if (rs != null) {
+//	private static void closeAll(PreparedStatement nick, PreparedStatement pss) {
+//		if (nick != null) {
 //			try {
-//				rs.close();
-//			} catch (Exception ex) {
+//				nick.close();
+//			} catch (Exception e) {
 //			}
 //		}
-//		if (st != null) {
+//		if (pss != null) {
 //			try {
-//				st.close();
-//			} catch (Exception ex) {
-//			}
-//		}
-//		if (cnx != null) {
-//			try {
-//				cnx.close();
-//			} catch (Exception ex) {
+//				pss.close();
+//			} catch (Exception e) {	
 //			}
 //		}
 //	}
