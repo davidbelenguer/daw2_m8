@@ -23,19 +23,21 @@ public class LoginCase {
 			String consultaNick = "select * from users where nick=?;";
 			nick = conectionNick.prepareStatement(consultaNick);
 			nick.setString(1, uName);
-			ResultSet Respuesta = nick.executeQuery();
 
-			if (Respuesta.next()) {
-				return false;
-			} else {
+			try(ResultSet Respuesta = nick.executeQuery()){
+				if (Respuesta.next()) {
+					return false;
+				} else {
 
-				String consulta = "insert into users (NICK,PASS,EMAIL) VALUES (?,?,?);";
-				pss = con.prepareStatement(consulta);
-				pss.setString(1, uName);
-				pss.setString(2, uPass);
-				pss.setString(3, uEmail);
-				con.commit();
+					String consulta = "insert into users (NICK,PASS,EMAIL) VALUES (?,?,?);";
+					pss = con.prepareStatement(consulta);
+					pss.setString(1, uName);
+					pss.setString(2, uPass);
+					pss.setString(3, uEmail);
+					con.commit();
+				}
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
