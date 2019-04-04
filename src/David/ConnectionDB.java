@@ -7,7 +7,6 @@ import java.sql.SQLException;
 public class ConnectionDB {
 
 	static String DRIVER="org.hsqldb.jdbcDriver";
-	//static String URL="jdbc:hsqldb:file:srv_db";
 	static String URL="jdbc:hsqldb:file:C:\\Users\\super\\eclipse-workspace\\M08\\WebContent\\WEB-INF\\lib\\srv_db.tmp";
 	public static Connection getConnection() {
 		Connection conec = null;
@@ -15,11 +14,11 @@ public class ConnectionDB {
 			Class.forName(DRIVER);
 			conec=DriverManager.getConnection(URL, "sa","");
 		} catch (ClassNotFoundException | SQLException e) {
-			System.err.println("Error"+e);
+			System.out.println("Error"+e);
 		}
 		return conec;
 	}
-	public ConnectionDB() {
+	private ConnectionDB() {
 		super();
 	}
 	
