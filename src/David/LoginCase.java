@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class LoginCase {
+public class LoginCase {
 
 	public static boolean insertUser;
 
@@ -46,25 +46,9 @@ class LoginCase {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			//closeAll(nick, pss);
 			nick.close();
 			pss.close();
 		}
 		return false;
 	}
-
-//	private static void closeAll(PreparedStatement nick, PreparedStatement pss) {
-//		if (nick != null) {
-//			try {
-//				nick.close();
-//			} catch (Exception e) {
-//			}
-//		}
-//		if (pss != null) {
-//			try {
-//				pss.close();
-//			} catch (Exception e) {	
-//			}
-//		}
-//	}
 }
