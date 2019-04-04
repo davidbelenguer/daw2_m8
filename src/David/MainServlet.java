@@ -29,12 +29,7 @@ public class MainServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.err.println("***************\n\n*********************OOOOOOOOOOOOOOOOOOOOOOOOO");
-
 		getServletContext().getRequestDispatcher("/html/index.jsp").forward(request, response);
-		
-		
 	}
 
 	/**
