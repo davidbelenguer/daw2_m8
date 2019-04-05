@@ -30,7 +30,7 @@ public class validacion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		
 		String email = request.getParameter("email");
 		String nik = request.getParameter("nombre");
@@ -44,17 +44,7 @@ public class validacion extends HttpServlet {
 		Pattern pat2 = Pattern.compile("^[a-zA-Z0-9]{8,}$");
 		Matcher mat2 = pat2.matcher(pass);
 		System.err.println("***************\n\n*********************EEEEEIIIIIIIIIIIII");
-//		if (mat.find() && mat1.find() && mat2.find()) {
-//			
-//			//response.sendRedirect("/html/ok.html");
-//			ConnectionDB.getConnection();
-//			LoginCase.insertUser(nik, pass, email);
-//			getServletContext().getRequestDispatcher("/html/ok.html").forward(request, response);
-//		}else {
-//			//response.sendRedirect("html/error.html");
-//			//System.out.println("Hola");
-//			getServletContext().getRequestDispatcher("/html/error.html").forward(request, response);
-//		}
+
 		if (mat.find()) {
 			if (mat1.find()) {
 				if (mat2.find()) {
