@@ -43,7 +43,7 @@ public class validacion extends HttpServlet {
 		
 		Pattern pat2 = Pattern.compile("^[a-zA-Z0-9]{8,}$");
 		Matcher mat2 = pat2.matcher(pass);
-		System.err.println("***************\n\n*********************EEEEEIIIIIIIIIIIII");
+		
 
 		if (mat.find()) {
 			if (mat1.find()) {
