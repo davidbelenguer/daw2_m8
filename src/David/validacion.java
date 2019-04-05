@@ -1,6 +1,7 @@
 package David;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,12 +50,22 @@ public class validacion extends HttpServlet {
 			if (mat1.find()) {
 				if (mat2.find()) {
 					ConnectionDB.getConnection();
-					LoginCase.insertUser(nik, pass, email);
+					try {
+						LoginCase.insertUser(nik, pass, email);
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					
-					if (LoginCase.insertUser(nik, pass, email) == true) {
-						getServletContext().getRequestDispatcher("/html/ok.html").forward(request, response);
-					}else {
-						getServletContext().getRequestDispatcher("/html/UserRegistrado.html").forward(request, response);
+					try {
+						if (LoginCase.insertUser(nik, pass, email) == true) {
+							getServletContext().getRequestDispatcher("/html/ok.html").forward(request, response);
+						}else {
+							getServletContext().getRequestDispatcher("/html/UserRegistrado.html").forward(request, response);
+						}
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
 				}else {
 					getServletContext().getRequestDispatcher("/html/ErrorPass.html").forward(request, response);
