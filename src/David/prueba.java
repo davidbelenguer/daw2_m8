@@ -41,7 +41,7 @@ public class prueba extends HttpServlet {
 		if (mat.matches()) {
 			getServletContext().getRequestDispatcher("/html/ok.html").forward(request, response);
 		} else {
-			System.out.println("Hola");
+			
 			getServletContext().getRequestDispatcher("/html/error.html").forward(request,response);
 		}
 	}
