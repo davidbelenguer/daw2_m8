@@ -53,10 +53,8 @@ public class validacion extends HttpServlet {
 					try {
 						LoginCase.insertUser(nik, pass, email);
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
 					try {
 						if (LoginCase.insertUser(nik, pass, email) == true) {
 							getServletContext().getRequestDispatcher("/html/ok.html").forward(request, response);
@@ -64,23 +62,17 @@ public class validacion extends HttpServlet {
 							getServletContext().getRequestDispatcher("/html/UserRegistrado.html").forward(request, response);
 						}
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}else {
 					getServletContext().getRequestDispatcher("/html/ErrorPass.html").forward(request, response);
 				}
-				
 			}else {
 				getServletContext().getRequestDispatcher("/html/ErrorNick.html").forward(request, response);
 			}
-			
 		}else {
 			getServletContext().getRequestDispatcher("/html/ErrorMail.html").forward(request, response);
 		}
-		
-		
-		
 	}
 
 	
