@@ -42,18 +42,23 @@ public class LoginCase {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
 				if (pss != null) {
-					pss.close();
+					try {
+						pss.close();
+					} catch (Exception e2) {
+						
+					}
 				}
 				if (nick != null) {
-					nick.close();
+					try {
+						nick.close();
+					} catch (Exception e3) {
+						
+					}
+					
 				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
-		}
+		
 		return false;
 	}
+}
 }
