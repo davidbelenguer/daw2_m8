@@ -45,8 +45,9 @@ public class LoginCase {
 			try {
 				if (pss != null) {
 					pss.close();
+				}
+				if (nick != null) {
 					nick.close();
-					
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
