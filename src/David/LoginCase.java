@@ -15,9 +15,10 @@ public class LoginCase {
 		Connection con;
 		con = ConnectionDB.getConnection();
 		Connection conectionNick;
-		conectionNick = ConnectionDB.getConnection();
 		PreparedStatement pss = null;
 		PreparedStatement nick = null;
+		conectionNick = ConnectionDB.getConnection();
+		
 
 		try {
 			String consultaNick = "select * from users where nick=?;";
@@ -44,12 +45,13 @@ public class LoginCase {
 			try {
 				if (pss != null) {
 					pss.close();
+					nick.close();
+					//pss.close();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			nick.close();
-			pss.close();
+			
 		}
 		return false;
 	}
