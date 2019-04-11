@@ -12,11 +12,16 @@ public class ConnectionDB {
 	static String URL="jdbc:hsqldb:file:C:\\Users\\super\\eclipse-workspace\\M08\\WebContent\\WEB-INF\\lib\\srv_db.tmp";
 	public static Connection getConnection() {
 	    final Logger LOGGER = Logger.getLogger("David");
-
+	    
+	    //Variables para la conexion
+	    String us = "sa";
+	    String pass = "";
+	    
 		Connection conec = null;
 		try {
 			Class.forName(DRIVER);
-			conec=DriverManager.getConnection(URL, "sa","");
+			
+			conec=DriverManager.getConnection(URL, us,pass);
 		} catch (ClassNotFoundException | SQLException e) {
 			LOGGER.log(Level.SEVERE,e.toString());
 		}
