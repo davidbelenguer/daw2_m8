@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class LoginCase {
+	private LoginCase(){
+		//Constructor LoginCase
+	}
 
 	/* CREATE TABLE */
 	public static boolean insertUser(String uName, String uPass, String uEmail) throws SQLException {
