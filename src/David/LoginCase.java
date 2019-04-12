@@ -43,14 +43,14 @@ public class LoginCase {
 				try {
 					pss.close();
 				} catch (Exception e2) {
-
+					//Exepcion 2
 				}
 			}
 			if (nick != null) {
 				try {
 					nick.close();
 				} catch (Exception e3) {
-
+					//Exepcion 3
 				}
 
 			}
