@@ -8,8 +8,6 @@ import java.sql.Statement;
 
 public class LoginCase {
 
-	
-
 	/* CREATE TABLE */
 	public static boolean insertUser(String uName, String uPass, String uEmail) throws SQLException {
 		Connection con;
@@ -18,14 +16,13 @@ public class LoginCase {
 		PreparedStatement pss = null;
 		PreparedStatement nick = null;
 		conectionNick = ConnectionDB.getConnection();
-		
 
 		try {
 			String consultaNick = "select * from users where nick=?;";
 			nick = conectionNick.prepareStatement(consultaNick);
 			nick.setString(1, uName);
 
-			try(ResultSet Respuesta = nick.executeQuery()){
+			try (ResultSet Respuesta = nick.executeQuery()) {
 				if (Respuesta.next()) {
 					return false;
 				} else {
@@ -38,27 +35,28 @@ public class LoginCase {
 					con.commit();
 				}
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-				if (pss != null) {
-					try {
-						pss.close();
-					} catch (Exception e2) {
-						
-					}
+			if (pss != null) {
+				try {
+					pss.close();
+				} catch (Exception e2) {
+
 				}
-				if (nick != null) {
-					try {
-						nick.close();
-					} catch (Exception e3) {
-						
-					}
-					
+			}
+			if (nick != null) {
+				try {
+					nick.close();
+				} catch (Exception e3) {
+
 				}
-		
+
+			}
+
+			
+		}
 		return false;
 	}
-}
 }
