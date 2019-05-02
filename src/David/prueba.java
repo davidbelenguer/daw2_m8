@@ -22,7 +22,7 @@ public class prueba extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Properties prop = new Properties();
 	InputStream is = null;
-	//private static Pattern pat = null;
+	
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
