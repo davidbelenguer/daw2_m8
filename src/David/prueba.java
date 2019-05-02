@@ -1,6 +1,9 @@
 package David;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,13 +13,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class prueba
  */
 @WebServlet("/prueba")
 public class prueba extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	Properties prop = new Properties();
+	InputStream is = null;
+	//private static Pattern pat = null;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -33,9 +39,17 @@ public class prueba extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		
+		try {
+			is = new FileInputStream("configuracion.properties");
+			prop.load(is);
+		} catch(IOException e) {
+			System.out.println(e.toString());
+		}
+		
 		String email = request.getParameter("email");
-		Pattern pat = Pattern
-				.compile("^[A-Za-z0-9]+([.|-][A-za-z0-9]+)*@[A-Za-z0-9]+([.|-][A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+		Pattern pat = Pattern.compile((prop.getProperty("servidor.email")));
+	
 		Matcher mat = pat.matcher(email);
 		
 		if (mat.matches()) {
