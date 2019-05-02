@@ -1,7 +1,8 @@
 package David;
 
-import java.io.IOException;
+import java.io.*;
 import java.sql.SQLException;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,13 +17,19 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/validacion")
 public class validacion extends HttpServlet {
+	Properties prop = new Properties();
+	FileReader is = null;
+	
 	private static final long serialVersionUID = 1L;
+	
+	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public validacion() {
         super();
+        
         // TODO Auto-generated constructor stub
     }
 
@@ -33,16 +40,25 @@ public class validacion extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
+		try {
+			is = new FileReader("datos.properties");
+			prop.load(is);
+		} catch(IOException e) {
+			System.out.println(e.toString());
+		}
+		Pattern pat1 = Pattern.compile((prop.getProperty("servidor_nik")));
+		
 		String email = request.getParameter("email");
 		String nik = request.getParameter("nombre");
 		String pass = request.getParameter("contra");
-		Pattern pat1 = Pattern.compile("^[a-zA-Z0-9]{1,9}$");
+		
+		
 		Matcher mat1 = pat1.matcher(nik);
 		
-		Pattern pat = Pattern.compile("^[A-Za-z0-9]+([.|-][A-za-z0-9]+)*@[A-Za-z0-9]+([.|-][A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+		Pattern pat = Pattern.compile((prop.getProperty("servidor_email")));
 		Matcher mat = pat.matcher(email);
 		
-		Pattern pat2 = Pattern.compile("^[a-zA-Z0-9]{8,}$");
+		Pattern pat2 = Pattern.compile((prop.getProperty("servidor_pa")));
 		Matcher mat2 = pat2.matcher(pass);
 		
 
