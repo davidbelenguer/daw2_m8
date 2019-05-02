@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,6 +31,7 @@ public class prueba extends HttpServlet {
 	public prueba() {
 		super();
 		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -37,6 +40,7 @@ public class prueba extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		final Logger LOGGER = Logger.getLogger("David");
 		// TODO Auto-generated method stub
 		
 		
@@ -44,7 +48,8 @@ public class prueba extends HttpServlet {
 			is = new FileInputStream("configuracion.properties");
 			prop.load(is);
 		} catch(IOException e) {
-			System.out.println(e.toString());
+			//System.out.println(e.toString());
+			LOGGER.log(Level.SEVERE,e.toString());
 		}
 		
 		String email = request.getParameter("email");
