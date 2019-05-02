@@ -48,7 +48,6 @@ public class prueba extends HttpServlet {
 			is = new FileInputStream("configuracion.properties");
 			prop.load(is);
 		} catch(IOException e) {
-			//System.out.println(e.toString());
 			LOGGER.log(Level.SEVERE,e.toString());
 		}
 		
