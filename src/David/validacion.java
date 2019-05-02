@@ -3,6 +3,8 @@ package David;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,13 +40,13 @@ public class validacion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		final Logger LOGGER = Logger.getLogger("David");
 		
 		try {
 			is = new FileReader("datos.properties");
 			prop.load(is);
 		} catch(IOException e) {
-			System.out.println(e.toString());
+			LOGGER.log(Level.SEVERE,e.toString());
 		}
 		Pattern pat1 = Pattern.compile((prop.getProperty("servidor_nik")));
 		
