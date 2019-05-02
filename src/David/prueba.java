@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
  * Servlet implementation class prueba
  */
@@ -30,8 +29,6 @@ public class prueba extends HttpServlet {
 	 */
 	public prueba() {
 		super();
-		// TODO Auto-generated constructor stub
-		
 	}
 
 	/**
@@ -40,9 +37,8 @@ public class prueba extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		final Logger LOGGER = Logger.getLogger("David");
-		// TODO Auto-generated method stub
 		
+		final Logger LOGGER = Logger.getLogger("David");
 		
 		try {
 			is = new FileInputStream("configuracion.properties");
@@ -70,7 +66,7 @@ public class prueba extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
 	}
 
