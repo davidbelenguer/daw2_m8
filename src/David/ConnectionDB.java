@@ -9,10 +9,20 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
+
 public class ConnectionDB {
 
 	static String DRIVER="org.hsqldb.jdbcDriver";
 	static String URL="jdbc:hsqldb:file:C:\\Users\\super\\eclipse-workspace\\M08\\WebContent\\WEB-INF\\lib\\srv_db.tmp";
+	/**
+	 * @return
+	 */
+	
 	public static Connection getConnection() {
 	    final Logger LOGGER = Logger.getLogger("David");
 	    Properties prop = new Properties();
