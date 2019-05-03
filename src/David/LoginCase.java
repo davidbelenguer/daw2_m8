@@ -5,12 +5,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
+
 public class LoginCase {
+	
 	private LoginCase(){
 		//Constructor LoginCase
 	}
 
 	/* CREATE TABLE */
+	/**
+	 * @param uName
+	 * @param uPass
+	 * @param uEmail
+	 * @return
+	 * @throws SQLException
+	 */
 	public static boolean insertUser(String uName, String uPass, String uEmail) throws SQLException {
 		Connection con;
 		con = ConnectionDB.getConnection();
