@@ -3,10 +3,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registro</title>
+<style>
+	#title{
+		text-decoration: underline;
+		letter-spacing: 3px;
+		font: oblique bold 120% cursive;
+	}
+	
+	label, input{
+		font: bold 90% monospace;
+	}
+</style>
 </head>
 <body>
 	<form action="../validacion" method="get">
-		<h1>Formulario de registro</h1>
+		<h1 id="title">Formulario de registro</h1>
 		<label>Nick</label>
 		<input name= "nombre" type="text"><br><br>
 		<label>Email</label>
