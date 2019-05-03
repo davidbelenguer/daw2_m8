@@ -1,8 +1,11 @@
 package David;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,10 +15,18 @@ public class ConnectionDB {
 	static String URL="jdbc:hsqldb:file:C:\\Users\\super\\eclipse-workspace\\M08\\WebContent\\WEB-INF\\lib\\srv_db.tmp";
 	public static Connection getConnection() {
 	    final Logger LOGGER = Logger.getLogger("David");
-	    
+	    Properties prop = new Properties();
+		FileReader is = null;
+		
+		try {
+			is = new FileReader("datos.properties");
+			prop.load(is);
+		} catch(IOException e) {
+			LOGGER.log(Level.SEVERE,e.toString());
+		}
 	    //Variables para la conexion
-	    String us = "sa";
-	    String pass = "";
+	    String us = (prop.getProperty("usuario"));
+	    String pass = (prop.getProperty("contraseña"));
 	    
 		Connection conec = null;
 		try {
