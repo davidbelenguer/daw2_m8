@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MainServlet
  */
+
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
