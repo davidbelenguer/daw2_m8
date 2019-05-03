@@ -17,6 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class validacion
  */
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
 @WebServlet("/validacion")
 public class validacion extends HttpServlet {
 	Properties prop = new Properties();
@@ -37,6 +42,10 @@ public class validacion extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	/* (non-Javadoc)
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		final Logger LOGGER = Logger.getLogger("David");
