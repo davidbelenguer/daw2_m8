@@ -18,6 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class prueba
  */
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
+
 @WebServlet("/prueba")
 public class prueba extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,6 +41,10 @@ public class prueba extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	/* (non-Javadoc)
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
