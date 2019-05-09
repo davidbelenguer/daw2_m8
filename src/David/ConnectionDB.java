@@ -22,8 +22,20 @@ public class ConnectionDB {
 	/**
 	 * @return
 	 */
-	
+	/**
+	 * @param LOGGER
+	 * @param prop
+	 * @param is
+	 * @param us
+	 * @param pass
+	 * @param conec
+	 */
 	public static Connection getConnection() {
+		/**
+		 * Este es el metodo para conectarnos a la base de datos,
+		 * con su contraseña y usuario que le corresponde. Estos datos
+		 * estan en un fichero aparte, apra tener más seguridad
+		 */
 	    final Logger LOGGER = Logger.getLogger("David");
 	    Properties prop = new Properties();
 		FileReader is = null;
