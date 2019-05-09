@@ -51,12 +51,12 @@ public class validacion extends HttpServlet {
 		final Logger LOGGER = Logger.getLogger("David");
 		
 		try {
-			is = new FileReader("datos.properties");
+			is = new FileReader("/datos.properties");
 			prop.load(is);
 		} catch(IOException e) {
 			LOGGER.log(Level.SEVERE,e.toString());
 		}
-		Pattern pat1 = Pattern.compile((prop.getProperty("servidor_nik")));
+		Pattern pat1 = Pattern.compile("^[a-zA-Z0-9]{8,}$");
 		
 		String email = request.getParameter("email");
 		String nik = request.getParameter("nombre");
@@ -65,10 +65,10 @@ public class validacion extends HttpServlet {
 		
 		Matcher mat1 = pat1.matcher(nik);
 		
-		Pattern pat = Pattern.compile((prop.getProperty("servidor_email")));
+		Pattern pat = Pattern.compile("^[A-Za-z0-9]+([.|-][A-za-z0-9]+)*@[A-Za-z0-9]+([.|-][A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 		Matcher mat = pat.matcher(email);
 		
-		Pattern pat2 = Pattern.compile((prop.getProperty("servidor_pa")));
+		Pattern pat2 = Pattern.compile("^[a-zA-Z0-9]{8,}$");
 		Matcher mat2 = pat2.matcher(pass);
 		
 
