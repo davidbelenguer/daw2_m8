@@ -1,5 +1,10 @@
 package David;
 
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -9,19 +14,12 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * 
- * @author David Belenguer
- *
- */
 
 public class ConnectionDB {
 
 	static String DRIVER="org.hsqldb.jdbcDriver";
 	static String URL="jdbc:hsqldb:file:C:\\Users\\super\\eclipse-workspace\\M08\\WebContent\\WEB-INF\\lib\\srv_db.tmp";
-	/**
-	 * @return
-	 */
+	
 	/**
 	 * @param LOGGER
 	 * @param prop
@@ -29,6 +27,7 @@ public class ConnectionDB {
 	 * @param us
 	 * @param pass
 	 * @param conec
+	 * @return
 	 */
 	public static Connection getConnection() {
 		/**
