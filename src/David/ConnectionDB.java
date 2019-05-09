@@ -40,7 +40,7 @@ public class ConnectionDB {
 		FileReader is = null;
 		
 		try {
-			is = new FileReader("datos.properties");
+			is = new FileReader("/datos.properties");
 			prop.load(is);
 		} catch(IOException e) {
 			LOGGER.log(Level.SEVERE,e.toString());

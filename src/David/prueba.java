@@ -1,5 +1,9 @@
 package David;
-
+/**
+ * 
+ * @author David Belenguer
+ *
+ */
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,11 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class prueba
  */
-/**
- * 
- * @author David Belenguer
- *
- */
+
 
 @WebServlet("/prueba")
 public class prueba extends HttpServlet {
