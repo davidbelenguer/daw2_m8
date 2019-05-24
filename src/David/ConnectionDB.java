@@ -38,7 +38,10 @@ public class ConnectionDB {
 	    final Logger LOGGER = Logger.getLogger("David");
 	    Properties prop = new Properties();
 		FileReader is = null;
-		
+		/**
+		 * Aqui leemos el fichero properties que hemos externalizado 
+		 * de nuestro codigo, para tener más seguridad.
+		 */
 		try {
 			is = new FileReader("/datos.properties");
 			prop.load(is);
@@ -60,6 +63,9 @@ public class ConnectionDB {
 		return conec;
 	}
 	private ConnectionDB() {
+		/** 
+		 * Esto es el constructor por defecto de la clase.
+		 */
 		super();
 	}
 	
