@@ -49,14 +49,19 @@ public class prueba extends HttpServlet {
 			throws ServletException, IOException {
 		
 		final Logger LOGGER = Logger.getLogger("David");
-		
+		/**
+		 * Aqui leemos el fichero properties que hemos externalizado 
+		 * de nuestro codigo, para tener más seguridad.
+		 */
 		try {
 			is = new FileInputStream("configuracion.properties");
 			prop.load(is);
 		} catch(IOException e) {
 			LOGGER.log(Level.SEVERE,e.toString());
 		}
-		
+		/**
+		 * variables que utilizaremos en esta clase.
+		 */
 		String email = request.getParameter("email");
 		Pattern pat = Pattern.compile((prop.getProperty("servidor.email")));
 	
