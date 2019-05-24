@@ -24,5 +24,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/super/Downloads/viafirma-client-2.14.13.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
