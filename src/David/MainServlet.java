@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 
  * @author David Belenguer
+ * Esta clase es la principal del programa, en ella deberemos encender el servidor.
  *
  */
 @WebServlet("/MainServlet")
