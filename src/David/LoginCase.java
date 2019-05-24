@@ -26,6 +26,9 @@ public class LoginCase {
 	 * @throws SQLException
 	 */
 	public static boolean insertUser(String uName, String uPass, String uEmail) throws SQLException {
+		/**
+		 * Esta funcion la utilizaremos para insertar usuario en nuestra base de datos.
+		 */
 		Connection con;
 		con = ConnectionDB.getConnection();
 		Connection conectionNick;
@@ -42,7 +45,6 @@ public class LoginCase {
 				if (Respuesta.next()) {
 					return false;
 				} else {
-
 					String consulta = "insert into users (NICK,PASS,EMAIL) VALUES (?,?,?);";
 					pss = con.prepareStatement(consulta);
 					pss.setString(1, uName);
@@ -51,7 +53,6 @@ public class LoginCase {
 					con.commit();
 				}
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -68,10 +69,7 @@ public class LoginCase {
 				} catch (Exception e3) {
 					//Exepcion 3
 				}
-
 			}
-
-			
 		}
 		return false;
 	}
