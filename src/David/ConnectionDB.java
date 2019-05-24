@@ -20,16 +20,18 @@ public class ConnectionDB {
 	static String DRIVER="org.hsqldb.jdbcDriver";
 	static String URL="jdbc:hsqldb:file:C:\\Users\\super\\eclipse-workspace\\M08\\WebContent\\WEB-INF\\lib\\srv_db.tmp";
 	
-	/**
-	 * @param LOGGER
-	 * @param prop
-	 * @param is
-	 * @param us
-	 * @param pass
-	 * @param conec
-	 * @return
-	 */
+	
 	public static Connection getConnection() {
+		/**
+		 * @param LOGGER
+		 * @param prop
+		 * @param is
+		 * @param us
+		 * @param pass
+		 * @param conec
+		 * @return
+		 */
+		
 		/**
 		 * Este es el metodo para conectarnos a la base de datos,
 		 * con su contraseña y usuario que le corresponde. Estos datos

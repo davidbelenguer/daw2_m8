@@ -18,14 +18,17 @@ public class LoginCase {
 	}
 
 	/* CREATE TABLE */
-	/**
-	 * @param uName
-	 * @param uPass
-	 * @param uEmail
-	 * @return
-	 * @throws SQLException
-	 */
+	
 	public static boolean insertUser(String uName, String uPass, String uEmail) throws SQLException {
+		
+		/**
+		 * @param uName
+		 * @param uPass
+		 * @param uEmail
+		 * @return
+		 * @throws SQLException
+		 */
+		
 		/**
 		 * Esta funcion la utilizaremos para insertar usuario en nuestra base de datos.
 		 */
